@@ -70,7 +70,7 @@ function openTab(button) {
     }
 
     // Show the current tab, and add an "active" class to the button that opened the tab
-    document.getElementById(button.innerText).style.display = "block";
+    document.getElementById(button.innerText).style.display = "grid";
     button.className += " active";
 }
 
