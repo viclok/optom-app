@@ -4,7 +4,7 @@ const buttonDict = new Map([
     ["Far Phoria", "Phoria @ 3m"],
     ["+2", "Under +2:"],
     ["-2", "Under -2:"],
-    ["BI/BO", ".8BI/12BO facility"]
+    ["BI/BO", "8BI/12BO facility"]
 ])
 var copyState = []
 var backup = []
@@ -96,9 +96,6 @@ document.querySelector(".nRetButton").addEventListener("click", () => {
     document.querySelector(".nretOptions").style.display = "block"
 })
 
-document.querySelector(".closeButton").addEventListener("click", () => {
-    document.querySelector(".nretOptions").style.display = "none"
-})
 // Other
 document.getElementById("defaultTab").click()
 console.log("h")
