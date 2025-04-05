@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' https://api.open-meteo.com">
     <title>Hello World!</title>
     <link rel="stylesheet" href="styles.css">
   </head>
@@ -99,7 +99,7 @@
           <button class="optomNoteButton">BI/BO</button>
           <button class="optomNoteButton facilityButton">&pm;1.5</button>
           <button class="optomNoteButton facilityButton">&pm;0.5</button>
-          <button class="optomNoteButton">.</button>
+          <button class=" rainButton optomNoteButton">RAIN</button>
         </div>
         <div class="speed-fatigue-radio mod-1-12">
           <label for="double-tick-radio">
@@ -202,7 +202,7 @@
           <button class="optomNoteButton newlineButton">New Line</button>
         </div>
         <div class="mod-1-19">
-          <p>DATE/TIME (TO BE ADDED)</p>
+          <p class="datetime">Hi</p>
         </div>
       </div>
 
