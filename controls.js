@@ -29,6 +29,9 @@ var counter = 0
 var taasIndex = -1
 var tvasIndex = -1
 var mvptIndex = -1
+var taasNewline = false
+var tvasNewline = false
+var mvptNewline = false
 var currentTab = ""
 
 function useTimer(button) {
@@ -77,7 +80,12 @@ function renderTVAS() {
     var parentDiv = document.getElementById("ngButtons")
     // console.log(parentDiv.children)
     let tvasCount = 0
-    let tvasArray = ["TVAS"]
+    let tvasArray
+    if (tvasNewline) {
+        tvasArray = ["\nTVAS"]
+    } else {
+        tvasArray = ["TVAS"]
+    }
     for (let i=0 ; i<parentDiv.children.length; i++) {
         if (Number(parentDiv.children[i].getAttribute('data-state')) == 1) {
             tvasCount++
@@ -139,7 +147,13 @@ function add_to_note(button) {
         var parentDiv = button.parentElement
         // console.log(parentDiv.children)
         let taasCount = 0
-        let taasArray = ["TAAS"]
+        let taasArray
+        if (taasNewline) {
+            taasArray = ["\nTAAS"]
+        } else {
+            taasArray = ["TAAS"]
+        }
+        
         for (let child of parentDiv.children) {
             if (Number(child.getAttribute('data-state')) == 1) {
                 taasCount++
@@ -191,7 +205,12 @@ function add_to_note(button) {
         var parentDiv = button.parentElement
         // console.log(parentDiv.children)
         let mvptCount = 0
-        let mvptArray = ["MVPT"]
+        let mvptArray
+        if (mvptNewline) {
+            mvptArray = ["\nMVPT"]
+        } else {
+            mvptArray = ["MVPT"]
+        }
         for (let child of parentDiv.children) {
             if (Number(child.getAttribute('data-state')) == 1) {
                 mvptCount++
@@ -280,8 +299,13 @@ function add_to_note(button) {
                 child.style.backgroundColor = threeCycleButtonStates[0]
             }
             document.querySelectorAll('#ngButtonCheckboxes input[type="checkbox"]').forEach(cb => {
-                cb.checked = false;
+                cb.checked = false
               });
+            taasNewline = false
+            tvasNewline = false
+            mvptNewline = false
+            document.getElementById("0.5-radio-mod-3-1").checked = false
+            document.getElementById("0.75-radio-mod-3-1").checked = false
         }
     }
     else if (buttonClasses.contains("newlineButton")) {
@@ -304,7 +328,18 @@ function add_to_note(button) {
     }
     if (addNewline & !activeButton) {
         copyState[copyState.length - 1] = "\n" + copyState[copyState.length - 1]
-        console.log(copyState)
+        if (currentTab == "Perceptual") {
+            if (copyState.length - 1 == taasIndex) {
+                taasNewline = true
+            }
+            if (copyState.length - 1 == tvasIndex) {
+                tvasNewline = true
+            }
+            if (copyState.length - 1 == mvptIndex) {
+                mvptNewline = true
+            }
+        }
+        // console.log(copyState)
         addNewline = false
     }
     copyBox.value = copyState.join(" ")
