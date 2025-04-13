@@ -1,4 +1,6 @@
 const { app, BrowserWindow } = require('electron')
+const { updateElectronApp } = require('update-electron-app')
+updateElectronApp()
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -15,4 +17,4 @@ const createWindow = () => {
 
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.quit()
-  })
+  })  

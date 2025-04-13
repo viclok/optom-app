@@ -3,14 +3,15 @@
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; connect-src 'self' https://api.open-meteo.com">
-    <title>Hello World!</title>
+    <title>Optom App</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="tab">
-      <button id="defaultTab" class="tablinks">Binocular</button>
+      <!-- <button id="defaultTab" class="tablinks">Binocular</button> -->
+      <button class="tablinks">Binocular</button>
       <button class="tablinks">Stereo/CV</button>
-      <button class="tablinks">Tokyo</button>
+      <button id="defaultTab" class="tablinks">Perceptual</button>
     </div>
     <div id="Binocular" class="tabcontent binocular-tab">
       <div class="binocular-section-1">
@@ -245,114 +246,284 @@
       <textarea id="copyBox"></textarea>
     </div>
 
-    
-    <div id="Stereo/CV" class="tabcontent">
+    <div id="Stereo/CV" class="tabcontent stereo-tab">
       <div class="randot-forms mod-2-1">
         <button class="optomNoteButton">Randot Forms</button>
         <div class="randot-forms-radio">
-          <input type="radio" id="500-radio" name="randot-forms-radio" value="500" class="optomNoteButton radioButton">
-          <label for="500-radio">500</label>
-          <input type="radio" id="250-radio" name="randot-forms-radio" value="250" class="optomNoteButton radioButton">
-          <label for="250-radio">250</label>
-          <input type="radio" id="none-radio" name="randot-forms-radio" value="None" class="optomNoteButton radioButton">
-          <label for="none-radio">None</label>
+          <label for="500-radio">
+            <input type="radio" id="500-radio" name="randot-forms-radio" value="500" class="optomNoteButton radioButton"> 500
+          </label>
+          <label for="250-radio">
+            <input type="radio" id="250-radio" name="randot-forms-radio" value="250" class="optomNoteButton radioButton"> 250
+          </label>
+          <label for="none-radio-randot">
+            <input type="radio" id="none-radio-randot" name="randot-forms-radio" value="None" class="optomNoteButton radioButton"> None
+          </label>
         </div>
       </div>
+    
       <div class="randot-shapes mod-2-2">
         <div class="randot-shapes-options">
           <button class="optomNoteButton">Randot Circles</button>
           <button class="optomNoteButton">Randot Animals</button>
         </div>
         <div class="randot-shapes-radio">
-          <input type="radio" id="400-radio" name="randot-shapes-radio" value="400" class="optomNoteButton radioButton">
-          <label for="400-radio">400</label>
-          <input type="radio" id="200-radio" name="randot-shapes-radio" value="200" class="optomNoteButton radioButton">
-          <label for="200-radio">200</label>  
-          <input type="radio" id="140-radio" name="randot-shapes-radio" value="140" class="optomNoteButton radioButton">
-          <label for="140-radio">140</label>
-          <input type="radio" id="100-radio" name="randot-shapes-radio" value="100" class="optomNoteButton radioButton">
-          <label for="100-radio">100</label>
-          <input type="radio" id="70-radio" name="randot-shapes-radio" value="70" class="optomNoteButton radioButton">
-          <label for="70-radio">70</label>
-          <input type="radio" id="50-radio" name="randot-shapes-radio" value="50" class="optomNoteButton radioButton">
-          <label for="50-radio">50</label>
-          <input type="radio" id="40-radio" name="randot-shapes-radio" value="40" class="optomNoteButton radioButton">
-          <label for="40-radio">40</label>
-          <input type="radio" id="30-radio" name="randot-shapes-radio" value="30" class="optomNoteButton radioButton">
-          <label for="30-radio">30</label>
-          <input type="radio" id="none-radio" name="randot-shapes-radio" value="None" class="optomNoteButton radioButton">
-          <label for="none-radio">None</label>
+          <label for="400-radio">
+            <input type="radio" id="400-radio" name="randot-shapes-radio" value="400" class="optomNoteButton radioButton"> 400
+          </label>
+          <label for="200-radio">
+            <input type="radio" id="200-radio" name="randot-shapes-radio" value="200" class="optomNoteButton radioButton"> 200
+          </label>
+          <label for="140-radio">
+            <input type="radio" id="140-radio" name="randot-shapes-radio" value="140" class="optomNoteButton radioButton"> 140
+          </label>
+          <label for="100-radio-shapes">
+            <input type="radio" id="100-radio-shapes" name="randot-shapes-radio" value="100" class="optomNoteButton radioButton"> 100
+          </label>
+          <label for="70-radio-shapes">
+            <input type="radio" id="70-radio-shapes" name="randot-shapes-radio" value="70" class="optomNoteButton radioButton"> 70
+          </label>
+          <label for="50-radio-shapes">
+            <input type="radio" id="50-radio-shapes" name="randot-shapes-radio" value="50" class="optomNoteButton radioButton"> 50
+          </label>
+          <label for="40-radio">
+            <input type="radio" id="40-radio" name="randot-shapes-radio" value="40" class="optomNoteButton radioButton"> 40
+          </label>
+          <label for="30-radio">
+            <input type="radio" id="30-radio" name="randot-shapes-radio" value="30" class="optomNoteButton radioButton"> 30
+          </label>
+          <label for="none-radio-shapes">
+            <input type="radio" id="none-radio-shapes" name="randot-shapes-radio" value="None" class="optomNoteButton radioButton"> None
+          </label>
         </div>
       </div>
+    
       <div class="tno mod-2-3">
-        <div class="tno-options">
+        <!-- <div class="tno-options"> -->
           <button class="optomNoteButton">TNO</button>
           <button class="optomNoteButton">Large TNO</button>
-        </div>
+        <!-- </div> -->
         <div class="tno-radio">
-          <input type="radio" id="100-radio" name="tno-radio" value="100%" class="optomNoteButton radioButton">
-          <label for="100-radio">100%</label>
-          <input type="radio" id="50-radio" name="tno-radio" value="50%" class="optomNoteButton radioButton">
-          <label for="50-radio">50%</label>  
-          <input type="radio" id="none-radio" name="tno-radio" value="None" class="optomNoteButton radioButton">
-          <label for="none-radio">None</label>
+          <label for="100-radio-tno">
+            <input type="radio" id="100-radio-tno" name="tno-radio" value="100%" class="optomNoteButton radioButton"> 100%
+          </label>
+          <label for="50-radio-tno">
+            <input type="radio" id="50-radio-tno" name="tno-radio" value="50%" class="optomNoteButton radioButton"> 50%
+          </label>
+          <label for="none-radio-tno">
+            <input type="radio" id="none-radio-tno" name="tno-radio" value="None" class="optomNoteButton radioButton"> None
+          </label>
         </div>
       </div>
+    
       <div class="large-rings mod-2-4">
         <button class="optomNoteButton">Large Rings</button>
         <div class="large-rings-radio">
-          <input type="radio" id="100-radio" name="large-rings-radio" value="100%" class="optomNoteButton radioButton">
-          <label for="100-radio">100%</label>
-          <input type="radio" id="70-radio" name="large-rings-radio" value="70%" class="optomNoteButton radioButton">
-          <label for="70-radio">70%</label>
-          <input type="radio" id="50-radio" name="large-rings-radio" value="50%" class="optomNoteButton radioButton">
-          <label for="50-radio">50%</label>
-          <input type="radio" id="no-radio" name="large-rings-radio" value="No" class="optomNoteButton radioButton">
-          <label for="no-radio">No</label>
-          <input type="radio" id="1m-radio" name="large-rings-radio" value="1m" class="optomNoteButton radioButton">
-          <label for="1m-radio">1m</label>
-          <input type="radio" id="2m-radio" name="large-rings-radio" value="2m" class="optomNoteButton radioButton">
-          <label for="2m-radio">2m</label>
-          <input type="radio" id="3m-radio" name="large-rings-radio" value="3m" class="optomNoteButton radioButton">
-          <label for="3m-radio">3m</label>
+          <label for="100-radio-rings">
+            <input type="radio" id="100-radio-rings" name="large-rings-radio" value="100%" class="optomNoteButton radioButton"> 100%
+          </label>
+          <label for="70-radio-rings">
+            <input type="radio" id="70-radio-rings" name="large-rings-radio" value="70%" class="optomNoteButton radioButton"> 70%
+          </label>
+          <label for="50-radio">
+            <input type="radio" id="50-radio" name="large-rings-radio" value="50%" class="optomNoteButton radioButton"> 50%
+          </label>
+          <label for="no-radio">
+            <input type="radio" id="no-radio" name="large-rings-radio" value="No" class="optomNoteButton radioButton"> No
+          </label>
+          <label for="1m-radio">
+            <input type="radio" id="1m-radio" name="large-rings-radio" value="1m" class="optomNoteButton radioButton"> 1m
+          </label>
+          <label for="2m-radio">
+            <input type="radio" id="2m-radio" name="large-rings-radio" value="2m" class="optomNoteButton radioButton"> 2m
+          </label>
+          <label for="3m-radio">
+            <input type="radio" id="3m-radio" name="large-rings-radio" value="3m" class="optomNoteButton radioButton"> 3m
+          </label>
         </div>
       </div>
+    
       <div class="ishihara mod-2-5">
         <button class="optomNoteButton">Ishihara</button>
         <div class="ishihara-radio">
-          <input type="radio" id="nads-radio" name="ishihara-radio" value="NAD" class="optomNoteButton radioButton">
-          <label for="nads-radio">NAD</label>
-          <input type="radio" id="errors-radio" name="ishihara-radio" value="Errors" class="optomNoteButton radioButton">
-          <label for="errors-radio">Errors</label>
-          <input type="radio" id="defective-radio" name="ishihara-radio" value="Defective" class="optomNoteButton radioButton">
-          <label for="defective-radio">Defective</label>
+          <label for="nads-radio">
+            <input type="radio" id="nads-radio" name="ishihara-radio" value="NAD" class="optomNoteButton radioButton"> NAD
+          </label>
+          <label for="errors-radio">
+            <input type="radio" id="errors-radio" name="ishihara-radio" value="Errors" class="optomNoteButton radioButton"> Errors
+          </label>
+          <label for="defective-radio">
+            <input type="radio" id="defective-radio" name="ishihara-radio" value="Defective" class="optomNoteButton radioButton"> Defective
+          </label>
         </div>
         <div class="put-on">
-          <h4 class="put-on-heading">Put on ...</button>
+          <h4 class="put-on-heading">Put on ...</h4>
           <div class="put-on-radio">
-            <input type="radio" id="0.5-radio" name="put-on-radio" value="+0.5" class="optomNoteButton radioButton">
-            <label for="0.5-radio">+0.5</label>
-            <input type="radio" id="0.75-radio" name="put-on-radio" value="+0.75" class="optomNoteButton radioButton">
-            <label for="0.75-radio">+0.75</label>
-            <input type="radio" id="rx-radio" name="put-on-radio" value="Rx" class="optomNoteButton radioButton">
-            <label for="rx-radio">Rx</label>
+            <label for="0.5-radio">
+              <input type="radio" id="0.5-radio" name="put-on-radio" value="+0.5" class="optomNoteButton radioButton"> +0.5
+            </label>
+            <label for="0.75-radio">
+              <input type="radio" id="0.75-radio" name="put-on-radio" value="+0.75" class="optomNoteButton radioButton"> +0.75
+            </label>
+            <label for="rx-radio">
+              <input type="radio" id="rx-radio" name="put-on-radio" value="Rx" class="optomNoteButton radioButton"> Rx
+            </label>
           </div>
+        </div>
       </div>
+    
       <div class="new-line mod-2-6">
         <button class="optomNoteButton newlineButton">New Line</button>
       </div>
+    
       <div class="options-module mod-2-7">
         <button class="optomNoteButton undoButton">Undo</button>
         <button class="optomNoteButton clearButton">Clear All</button>
         <button class="copyButton">Copy All</button>
       </div>
     </div>
+    
+    
+    
 
-
-    <div id="TODO" class="tabcontent">
+    <div id="Perceptual" class="tabcontent perceptual-tab">
+      <div class="mod-3-1">
+        <div class="demButtons">
+          <button class="demButton optomNoteButton" value="demA">DEM A</button>
+          <button class="demButton optomNoteButton" value="demB">DEM B</button>
+          <button class="demButton optomNoteButton" value="demC">DEM C</button>
+          <button class="demHelpButton optomNoteButton" value="skip">Skip line</button>
+          <button class="demHelpButton optomNoteButton" value="rpt">Rpt line</button>
+        </div>
+        <div id="demValues" class="demValues">
+          <input type="text" id="perceptualTimer" value="0" readonly>
+          <input type="text" id="demAOutput" value="0" readonly>
+          <input type="text" id="demBOutput" value="0" readonly>
+          <input type="text" id="demCOutput" value="0" readonly>
+          <input type="text" id="skipOutput" value="0" readonly>
+          <input type="text" id="rptOutput" value="0" readonly>
+        </div>
+        <div class="put-on-mod-3-1">
+          <h4 class="put-on-heading-mod-3-1">Put on ...</h4>
+          <div class="put-on-radio-mod-3-1">
+            <label for="0.5-radio-mod-3-1">
+              <input type="radio" id="0.5-radio-mod-3-1" name="put-on-radio-mod-3-1" value="+0.5" class="optomNoteButton radioButton"> +0.5
+            </label>
+            <label for="0.75-radio">
+              <input type="radio" id="0.75-radio-mod-3-1" name="put-on-radio-mod-3-1" value="+0.75" class="optomNoteButton radioButton"> +0.75
+            </label>
+          </div>
+        </div>
+        <button class="optomNoteButton newlineButton pink">New Line</button>
+        <div class="mod-3-5">
+          <h4>Monroe V3</h4>
+          <input type="text" id="monroeInput">
+          <button class="monroeSubmitButton optomNoteButton dark-blue">OK</button>
+        </div>
+      </div>
+      <div class="mod-3-2">
+        <h4>TAAS</h4>
+        <div id="taasButtons" class="taasButtons">
+          <button class="taasButton optomNoteButton" data-state="0">(Cow)boy</button>
+          <button class="taasButton optomNoteButton" data-state="0">steam(boat)</button>
+          <button class="taasButton optomNoteButton" data-state="0">1 sun(shine)</button>
+          <button class="taasButton optomNoteButton" data-state="0">2 (pic)nic</button>
+          <button class="taasButton optomNoteButton" data-state="0">3 (cu)cumber</button>
+          <button class="taasButton optomNoteButton" data-state="0">4 (c)oat</button>
+          <button class="taasButton optomNoteButton" data-state="0">5 (m)eat</button>
+          <button class="taasButton optomNoteButton" data-state="0">6 (t)ake</button>
+          <button class="taasButton optomNoteButton" data-state="0">7 ga(me)</button>
+          <button class="taasButton optomNoteButton" data-state="0">8 wro(te)</button>
+          <button class="taasButton optomNoteButton" data-state="0">9 plea(se)</button>
+          <button class="taasButton optomNoteButton" data-state="0">10 (c)lap</button>
+          <button class="taasButton optomNoteButton" data-state="0">11 (p)lay</button>
+          <button class="taasButton optomNoteButton" data-state="0">12 s(t)ale</button>
+          <button class="taasButton optomNoteButton" data-state="0">13 s(m)ack</button>
+        </div>
+      </div>
+      <div class="mod-3-3">
+        <h4>TVAS</h4>
+        <div id="ngButtons" class="taasButtons">
+          <button class="tvasButton optomNoteButton" data-state="0">1</button>
+          <button class="tvasButton optomNoteButton" data-state="0">2</button>
+          <button class="tvasButton optomNoteButton" data-state="0">3</button>
+          <button class="tvasButton optomNoteButton" data-state="0">4</button>
+          <button class="tvasButton optomNoteButton" data-state="0">5</button>
+          <button class="tvasButton optomNoteButton" data-state="0">6</button>
+          <button class="tvasButton optomNoteButton" data-state="0">7</button>
+          <button class="tvasButton optomNoteButton" data-state="0">8</button>
+          <button class="tvasButton optomNoteButton" data-state="0">9</button>
+          <button class="tvasButton optomNoteButton" data-state="0">10</button>
+          <button class="tvasButton optomNoteButton" data-state="0">11</button>
+          <button class="tvasButton optomNoteButton" data-state="0">12</button>
+          <button class="tvasButton optomNoteButton" data-state="0">13</button>
+          <button class="tvasButton optomNoteButton" data-state="0">14</button>
+        </div>
+        <h4>NG</h4>
+        <div id="ngButtonCheckboxes" class="ngButtons">
+          <input type="checkbox" id="tvasng1" name="tvasng1" value="0" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng2" name="tvasng2" value="1" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng3" name="tvasng3" value="2" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng4" name="tvasng4" value="3" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng5" name="tvasng5" value="4" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng6" name="tvasng6" value="5" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng7" name="tvasng7" value="6" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng8" name="tvasng8" value="7" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng9" name="tvasng9" value="8" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng10" name="tvasng10" value="9" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng11" name="tvasng11" value="10" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng12" name="tvasng12" value="11" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng13" name="tvasng13" value="12" class="optomNoteButton tvasNGButton">
+          <input type="checkbox" id="tvasng14" name="tvasng14" value="13" class="optomNoteButton tvasNGButton">
+        </div>
+      </div>
+      <div class="mod-3-4">
+        <h4>MVPT</h4>
+        <div id="mvptButtons" class="mvptButtons">
+          <button class="mvptButton optomNoteButton" data-state="0">1</button>
+          <button class="mvptButton optomNoteButton" data-state="0">2</button>
+          <button class="mvptButton optomNoteButton" data-state="0">3</button>
+          <button class="mvptButton optomNoteButton" data-state="0">4</button>
+          <button class="mvptButton optomNoteButton" data-state="0">5</button>
+          <button class="mvptButton optomNoteButton" data-state="0">6</button>
+          <button class="mvptButton optomNoteButton" data-state="0">7</button>
+          <button class="mvptButton optomNoteButton" data-state="0">8</button>
+          <button class="mvptButton optomNoteButton" data-state="0">9</button>
+          <button class="mvptButton optomNoteButton" data-state="0">10</button>
+          <button class="mvptButton optomNoteButton" data-state="0">11</button>
+          <button class="mvptButton optomNoteButton" data-state="0">12</button>
+          <button class="mvptButton optomNoteButton" data-state="0">13</button>
+          <button class="mvptButton optomNoteButton" data-state="0">14</button>
+          <button class="mvptButton optomNoteButton" data-state="0">15</button>
+          <button class="mvptButton optomNoteButton" data-state="0">16</button>
+          <button class="mvptButton optomNoteButton" data-state="0">17</button>
+          <button class="mvptButton optomNoteButton" data-state="0">18</button>
+          <button class="mvptButton optomNoteButton" data-state="0">19</button>
+          <button class="mvptButton optomNoteButton" data-state="0">20</button>
+          <button class="mvptButton optomNoteButton" data-state="0">21</button>
+          <button class="mvptButton optomNoteButton" data-state="0">22</button>
+          <button class="mvptButton optomNoteButton" data-state="0">23</button>
+          <button class="mvptButton optomNoteButton" data-state="0">24</button>
+          <button class="mvptButton optomNoteButton" data-state="0">25</button>
+          <button class="mvptButton optomNoteButton" data-state="0">26</button>
+          <button class="mvptButton optomNoteButton" data-state="0">27</button>
+          <button class="mvptButton optomNoteButton" data-state="0">28</button>
+          <button class="mvptButton optomNoteButton" data-state="0">29</button>
+          <button class="mvptButton optomNoteButton" data-state="0">30</button>
+          <button class="mvptButton optomNoteButton" data-state="0">31</button>
+          <button class="mvptButton optomNoteButton" data-state="0">32</button>
+          <button class="mvptButton optomNoteButton" data-state="0">33</button>
+          <button class="mvptButton optomNoteButton" data-state="0">34</button>
+          <button class="mvptButton optomNoteButton" data-state="0">35</button>
+          <button class="mvptButton optomNoteButton" data-state="0">36</button>
+        </div>
+      </div>
+      <div class="options-module mod-3-5">
+        <button class="optomNoteButton undoButton">Undo</button>
+        <button class="optomNoteButton clearButton">Clear All</button>
+        <button class="copyButton">Copy All</button>
+      </div>
     </div>
-    
-    
 
 
     <script src="./controls.js"></script>
